@@ -1,0 +1,850 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ORIFLAME - Belleza y Cuidado Personal</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #fff5f8;
+    color: #49343d;
+}
+
+.app {
+    width: 100%;
+    max-width: 450px;
+    min-height: 100vh;
+    margin: auto;
+    background: white;
+    box-shadow: 0 0 20px #e8cbd7;
+    position: relative;
+    padding-bottom: 25px;
+}
+
+/* ENCABEZADO */
+
+header {
+    background: linear-gradient(135deg, #a83d70, #e28aaa);
+    color: white;
+    text-align: center;
+    padding: 25px 15px;
+}
+
+.logo {
+    font-family: Georgia, serif;
+    font-size: 34px;
+    letter-spacing: 4px;
+    font-weight: bold;
+}
+
+header p {
+    margin-top: 7px;
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+/* BUSCADOR */
+
+.search {
+    padding: 15px;
+    background: #fff0f5;
+}
+
+.search input {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #e5b4c9;
+    border-radius: 25px;
+    outline: none;
+    font-size: 14px;
+}
+
+/* BANNER */
+
+.banner {
+    margin: 15px;
+    padding: 28px 18px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, #f8d5e2, #fcebf1);
+    text-align: center;
+}
+
+.banner h2 {
+    color: #9e3568;
+    font-family: Georgia, serif;
+    font-size: 25px;
+}
+
+.banner p {
+    margin: 12px 0;
+    line-height: 1.5;
+    font-size: 14px;
+}
+
+.banner button {
+    background: #a83d70;
+    color: white;
+    border: none;
+    padding: 12px 23px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* CATEGORÍAS */
+
+h2.titulo {
+    color: #a83d70;
+    font-family: Georgia, serif;
+    font-size: 22px;
+    margin: 20px 15px 13px;
+}
+
+.categories {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 9px;
+    padding: 0 12px;
+}
+
+.cat {
+    background: #fff0f5;
+    border: 1px solid #f0cfdd;
+    border-radius: 13px;
+    padding: 13px 4px;
+    text-align: center;
+    cursor: pointer;
+    color: #87375e;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.cat span {
+    display: block;
+    font-size: 28px;
+    margin-bottom: 7px;
+}
+
+.cat.active {
+    background: #a83d70;
+    color: white;
+}
+
+/* PRODUCTOS */
+
+.products {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 0 12px;
+}
+
+.product {
+    background: white;
+    border: 1px solid #f0dce5;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px #f2dce5;
+}
+
+.product-image {
+    height: 145px;
+    background: #fff0f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 10px;
+}
+
+.product-info h3 {
+    color: #85365e;
+    font-size: 14px;
+    min-height: 34px;
+}
+
+.product-info p {
+    color: #987c88;
+    font-size: 11px;
+    margin: 5px 0;
+}
+
+.price {
+    color: #b23f78;
+    font-weight: bold;
+    font-size: 17px;
+    margin: 8px 0;
+}
+
+.old-price {
+    color: #999;
+    text-decoration: line-through;
+    font-size: 11px;
+    margin-left: 4px;
+}
+
+.product-info button {
+    width: 100%;
+    border: none;
+    padding: 10px 5px;
+    background: #ad4778;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.product-info button:hover {
+    background: #85305c;
+}
+
+.promo-label {
+    display: inline-block;
+    background: #f6d9a6;
+    color: #80501b;
+    padding: 4px 7px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* PROMOCIONES */
+
+.promo {
+    margin: 15px;
+    padding: 20px;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #f5d6a8, #fff1d9);
+    text-align: center;
+}
+
+.promo h2 {
+    color: #99521c;
+    font-family: Georgia, serif;
+    margin-bottom: 8px;
+}
+
+.promo p {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* CARRITO */
+
+.cart {
+    margin: 15px;
+    padding: 17px;
+    border: 1px solid #eccbd9;
+    border-radius: 15px;
+    background: #fff8fb;
+}
+
+.cart h2 {
+    color: #a83d70;
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px solid #f1dce5;
+    padding: 10px 0;
+    font-size: 12px;
+}
+
+.cart-item button {
+    border: none;
+    background: #f5dce6;
+    color: #92345f;
+    padding: 5px 8px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.total {
+    color: #a83d70;
+    font-size: 19px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.whatsapp {
+    display: block;
+    width: 100%;
+    background: #25a85a;
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 12px;
+    margin-top: 15px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* NAVEGACIÓN */
+
+nav {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background: #fff0f5;
+    border-top: 1px solid #edccdb;
+    margin-top: 20px;
+}
+
+nav button {
+    background: transparent;
+    border: none;
+    color: #974269;
+    padding: 12px 2px;
+    font-size: 11px;
+    cursor: pointer;
+}
+
+nav span {
+    display: block;
+    font-size: 22px;
+    margin-bottom: 4px;
+}
+
+footer {
+    background: #a83d70;
+    color: white;
+    text-align: center;
+    padding: 20px 10px;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.empty {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 25px;
+    color: #966b80;
+}
+
+@media(max-width:350px) {
+    .products {
+        gap: 7px;
+    }
+
+    .product-image {
+        height: 120px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="app">
+
+<!-- ENCABEZADO -->
+<header>
+    <div class="logo">ORIFLAME</div>
+    <p>BELLEZA • BIENESTAR • CUIDADO PERSONAL</p>
+</header>
+
+<!-- BUSCADOR -->
+<div class="search">
+    <input type="search" id="buscar"
+    placeholder="🔍 Buscar maquillaje, perfumes, cremas..."
+    oninput="buscarProductos()">
+</div>
+
+<!-- INICIO -->
+<section id="inicio">
+
+    <div class="banner">
+        <h2>Tu belleza, tu esencia 🌸</h2>
+        <p>
+            Descubre un mundo de belleza y cuidado personal.
+            Encuentra tus productos favoritos y luce radiante
+            cada día.
+        </p>
+        <button onclick="irAProductos()">VER PRODUCTOS</button>
+    </div>
+
+    <h2 class="titulo">✨ Nuestras categorías</h2>
+
+    <div class="categories">
+        <button class="cat" onclick="filtrar('Maquillaje')">
+            <span>💄</span>Maquillaje
+        </button>
+
+        <button class="cat" onclick="filtrar('Perfumes')">
+            <span>🌷</span>Perfumes
+        </button>
+
+        <button class="cat" onclick="filtrar('Cremas faciales')">
+            <span>🧴</span>Cremas faciales
+        </button>
+
+        <button class="cat" onclick="filtrar('Cuidado corporal')">
+            <span>🛁</span>Cuidado corporal
+        </button>
+
+        <button class="cat" onclick="filtrar('Promociones')">
+            <span>🎁</span>Promociones
+        </button>
+
+        <button class="cat" onclick="filtrar('Todos')">
+            <span>🌸</span>Todos
+        </button>
+    </div>
+
+    <div class="promo">
+        <h2>🎁 Ofertas especiales</h2>
+        <p>
+            Encuentra promociones y productos especiales
+            para consentirte y regalar.
+        </p>
+        <button class="banner button"
+        onclick="filtrar('Promociones')">
+            Ver promociones
+        </button>
+    </div>
+
+</section>
+
+<!-- CATÁLOGO -->
+<section id="catalogo">
+
+    <h2 class="titulo" id="tituloCatalogo">
+        🌸 Nuestros productos
+    </h2>
+
+    <div class="products" id="listaProductos"></div>
+
+</section>
+
+<!-- CARRITO -->
+<section class="cart" id="carrito">
+
+    <h2>🛒 Mi carrito</h2>
+
+    <div id="itemsCarrito">
+        Tu carrito está vacío.
+    </div>
+
+    <div class="total" id="total">
+        Total: S/ 0.00
+    </div>
+
+    <button class="whatsapp" onclick="pedirWhatsApp()">
+        📲 REALIZAR PEDIDO POR WHATSAPP
+    </button>
+
+</section>
+
+<!-- NAVEGACIÓN -->
+<nav>
+    <button onclick="irInicio()">
+        <span>🏠</span>Inicio
+    </button>
+
+    <button onclick="filtrar('Todos')">
+        <span>🌸</span>Productos
+    </button>
+
+    <button onclick="filtrar('Promociones')">
+        <span>🎁</span>Ofertas
+    </button>
+
+    <button onclick="irCarrito()">
+        <span>🛒</span>Carrito
+    </button>
+</nav>
+
+<footer>
+    <h3>ORIFLAME 🌷</h3>
+    Belleza y cuidado personal<br>
+    Gracias por visitar nuestra tienda.<br>
+    <b>Tu belleza es nuestra inspiración.</b>
+</footer>
+
+</div>
+
+<script>
+
+// CATÁLOGO DE PRODUCTOS
+// Los precios son de ejemplo y puedes modificarlos.
+
+const productos = [
+
+{
+id: 1,
+nombre: "Labial Color Elegance",
+categoria: "Maquillaje",
+precio: 29.90,
+imagen: "https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=500",
+promo: false
+},
+
+{
+id: 2,
+nombre: "Base de Maquillaje",
+categoria: "Maquillaje",
+precio: 49.90,
+imagen: "https://images.unsplash.com/photo-1631214540242-4a6a3b5b2d12?w=500",
+promo: true,
+antes: 59.90
+},
+
+{
+id: 3,
+nombre: "Máscara de Pestañas",
+categoria: "Maquillaje",
+precio: 35.90,
+imagen: "https://images.unsplash.com/photo-1631214524020-7e18db9a8f92?w=500",
+promo: false
+},
+
+{
+id: 4,
+nombre: "Perfume Floral",
+categoria: "Perfumes",
+precio: 89.90,
+imagen: "https://images.unsplash.com/photo-1594035910387-fea47794261f?w=500",
+promo: true,
+antes: 109.90
+},
+
+{
+id: 5,
+nombre: "Perfume Elegance",
+categoria: "Perfumes",
+precio: 99.90,
+imagen: "https://images.unsplash.com/photo-1541643600914-78b084683601?w=500",
+promo: false
+},
+
+{
+id: 6,
+nombre: "Crema Hidratante Facial",
+categoria: "Cremas faciales",
+precio: 45.90,
+imagen: "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=500",
+promo: true,
+antes: 55.90
+},
+
+{
+id: 7,
+nombre: "Crema Antiarrugas",
+categoria: "Cremas faciales",
+precio: 59.90,
+imagen: "https://images.unsplash.com/photo-1556228720-195a672e8a03?w=500",
+promo: false
+},
+
+{
+id: 8,
+nombre: "Sérum Facial",
+categoria: "Cremas faciales",
+precio: 65.90,
+imagen: "https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?w=500",
+promo: false
+},
+
+{
+id: 9,
+nombre: "Crema Corporal",
+categoria: "Cuidado corporal",
+precio: 39.90,
+imagen: "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=500",
+promo: true,
+antes: 49.90
+},
+
+{
+id: 10,
+nombre: "Gel de Ducha",
+categoria: "Cuidado corporal",
+precio: 25.90,
+imagen: "https://images.unsplash.com/photo-1600428853876-fb5a850b444f?w=500",
+promo: false
+},
+
+{
+id: 11,
+nombre: "Loción Corporal",
+categoria: "Cuidado corporal",
+precio: 34.90,
+imagen: "https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?w=500",
+promo: false
+},
+
+{
+id: 12,
+nombre: "Set de Belleza",
+categoria: "Maquillaje",
+precio: 79.90,
+imagen: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=500",
+promo: true,
+antes: 99.90
+}
+
+];
+
+let categoriaActual = "Todos";
+let carrito = [];
+
+// MOSTRAR PRODUCTOS
+
+function mostrarProductos(lista) {
+
+    const contenedor = document.getElementById("listaProductos");
+
+    if(lista.length === 0) {
+        contenedor.innerHTML =
+        '<div class="empty">No encontramos productos. 🌸</div>';
+        return;
+    }
+
+    contenedor.innerHTML = lista.map(p => `
+
+        <div class="product">
+
+            <div class="product-image">
+                <img src="${p.imagen}"
+                alt="${p.nombre}"
+                loading="lazy"
+                onerror="this.style.display='none';
+                this.parentElement.innerHTML='🌸';">
+            </div>
+
+            <div class="product-info">
+
+                ${p.promo ? '<span class="promo-label">🎁 PROMOCIÓN</span>' : ''}
+
+                <h3>${p.nombre}</h3>
+
+                <p>${p.categoria}</p>
+
+                <div class="price">
+                    S/ ${p.precio.toFixed(2)}
+                    ${p.antes ? `<span class="old-price">S/ ${p.antes.toFixed(2)}</span>` : ''}
+                </div>
+
+                <button onclick="agregarCarrito(${p.id})">
+                    🛒 Agregar
+                </button>
+
+            </div>
+
+        </div>
+
+    `).join("");
+
+}
+
+// FILTRAR CATEGORÍAS
+
+function filtrar(categoria) {
+
+    categoriaActual = categoria;
+
+    let lista = productos;
+
+    if(categoria === "Promociones") {
+        lista = productos.filter(p => p.promo);
+    }
+    else if(categoria !== "Todos") {
+        lista = productos.filter(p => p.categoria === categoria);
+    }
+
+    document.getElementById("tituloCatalogo").textContent =
+        categoria === "Todos" ? "🌸 Todos los productos" :
+        categoria === "Promociones" ? "🎁 Nuestras promociones" :
+        "🌸 " + categoria;
+
+    document.getElementById("buscar").value = "";
+
+    document.querySelectorAll(".cat").forEach(b => {
+        b.classList.remove("active");
+    });
+
+    mostrarProductos(lista);
+
+    document.getElementById("catalogo").scrollIntoView({
+        behavior: "smooth"
+    });
+}
+
+// BUSCAR PRODUCTOS
+
+function buscarProductos() {
+
+    const texto = document.getElementById("buscar")
+        .value.toLowerCase();
+
+    const lista = productos.filter(p =>
+        p.nombre.toLowerCase().includes(texto) ||
+        p.categoria.toLowerCase().includes(texto)
+    );
+
+    document.getElementById("tituloCatalogo").textContent =
+        "🔎 Resultados de búsqueda";
+
+    mostrarProductos(lista);
+
+    document.getElementById("catalogo").scrollIntoView({
+        behavior: "smooth",
+        block: "nearest"
+    });
+}
+
+// AGREGAR AL CARRITO
+
+function agregarCarrito(id) {
+
+    const producto = productos.find(p => p.id === id);
+
+    const encontrado = carrito.find(p => p.id === id);
+
+    if(encontrado) {
+        encontrado.cantidad++;
+    } else {
+        carrito.push({
+            ...producto,
+            cantidad: 1
+        });
+    }
+
+    actualizarCarrito();
+
+    alert("🌸 Producto agregado a tu carrito.");
+}
+
+// ACTUALIZAR CARRITO
+
+function actualizarCarrito() {
+
+    const contenedor = document.getElementById("itemsCarrito");
+
+    if(carrito.length === 0) {
+        contenedor.innerHTML = "Tu carrito está vacío.";
+    } else {
+
+        contenedor.innerHTML = carrito.map(p => `
+
+            <div class="cart-item">
+
+                <div>
+                    <b>${p.nombre}</b><br>
+                    ${p.cantidad} x S/ ${p.precio.toFixed(2)}
+                </div>
+
+                <div>
+                    S/ ${(p.precio * p.cantidad).toFixed(2)}
+                    <button onclick="eliminar(${p.id})">✖</button>
+                </div>
+
+            </div>
+
+        `).join("");
+    }
+
+    const suma = carrito.reduce(
+        (total, p) => total + p.precio * p.cantidad, 0
+    );
+
+    document.getElementById("total").textContent =
+        "Total: S/ " + suma.toFixed(2);
+}
+
+// ELIMINAR PRODUCTO
+
+function eliminar(id) {
+
+    carrito = carrito.filter(p => p.id !== id);
+
+    actualizarCarrito();
+}
+
+// PEDIDO POR WHATSAPP
+
+function pedirWhatsApp() {
+
+    if(carrito.length === 0) {
+        alert("Primero agrega productos al carrito.");
+        return;
+    }
+
+    const telefono = "51999999999"; 
+    // CAMBIA ESTE NÚMERO POR TU WHATSAPP
+    // Escribe 51 + tu número, sin espacios.
+
+    let mensaje = "🌸 ¡Hola! Deseo realizar este pedido ORIFLAME:\n\n";
+
+    carrito.forEach(p => {
+        mensaje +=
+        "• " + p.nombre +
+        " x " + p.cantidad +
+        " = S/ " + (p.precio * p.cantidad).toFixed(2) + "\n";
+    });
+
+    const total = carrito.reduce(
+        (s, p) => s + p.precio * p.cantidad, 0
+    );
+
+    mensaje += "\nTOTAL: S/ " + total.toFixed(2);
+    mensaje += "\n\nPor favor, quisiera más información. ¡Gracias!";
+
+    const url = "https://wa.me/" + telefono +
+        "?text=" + encodeURIComponent(mensaje);
+
+    window.open(url, "_blank");
+}
+
+// NAVEGACIÓN
+
+function irInicio() {
+    document.getElementById("inicio").scrollIntoView({
+        behavior: "smooth"
+    });
+}
+
+function irCarrito() {
+    document.getElementById("carrito").scrollIntoView({
+        behavior: "smooth"
+    });
+}
+
+function irAProductos() {
+    filtrar("Todos");
+}
+
+// INICIAR
+
+mostrarProductos(productos);
+actualizarCarrito();
+
+</script>
+
+</body>
+</html>
